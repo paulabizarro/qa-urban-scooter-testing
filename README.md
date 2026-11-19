@@ -15,8 +15,8 @@ Portfólio técnico do **Projeto Final de QA (Sprint 9)** focado na validação 
 
 | Módulo / Escopo | Casos Projetados | Aprovados | Reprovados | Taxa de Aprovação | Bugs Registrados (Jira) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Tarefa 1 — Aplicativo Web (`Fazer Pedido`)** | 37 | 34 | 3 | 91,9% | `PBQ3S9PF-1` a `PBQ3S9PF-3` |
-| **Tarefa 3 — Backend & REST API (`Entregadores`)** | 30 | 15 | 15 | 50,0% | `PBQ3S9PF-4` a `PBQ3S9PF-18` |
+| **— Aplicativo Web (`Fazer Pedido`)** | 37 | 34 | 3 | 91,9% | `PBQ3S9PF-1` a `PBQ3S9PF-3` |
+| **— Backend & REST API (`Entregadores`)** | 30 | 15 | 15 | 50,0% | `PBQ3S9PF-4` a `PBQ3S9PF-18` |
 | **Total Geral Executado** | **67** | **49** | **18** | **73,1%** | **18 Tickets** |
 
 ---
@@ -43,7 +43,7 @@ Para garantir máxima cobertura com otimização de massa de dados, todos os cen
 
 ## 🐛 Catálogo Completo de Defeitos Encontrados (18 Bugs)
 
-### 🌐 Tarefa 1: Interface Web — Formulário *"Para quem é a scooter"* (`/order`)
+### 🌐 Interface Web — Formulário *"Para quem é a scooter"* (`/order`)
 
 | ID Jira | Caso | Severidade | Resumo do Defeito (Resultado Real) |
 | :--- | :---: | :---: | :--- |
@@ -53,7 +53,7 @@ Para garantir máxima cobertura com otimização de massa de dados, todos os cen
 
 ---
 
-### ⚙️ Tarefa 3: Backend & REST API — Endpoints de Entregadores
+### ⚙️ Backend & REST API — Endpoints de Entregadores
 
 #### 1. Criação de Entregador (`POST /api/v1/courier`)
 
