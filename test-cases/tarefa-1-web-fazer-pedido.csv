@@ -1,0 +1,193 @@
+ID,Caso de teste,Pré-condição,Etapas do teste,Classe de equivalência,Valores Limite,Dados de teste para classe de equivalência,Dados de teste para valores limite,Resultado esperado,Resultado real,Resultado real no Chrome 1280x720,Resultado real no Opera 1280x720,Link de bug do Jira
+Campo Nome,,,,,,,,,,,,
+1,Verifique se o campo nome pode ter de 2 a 15 caracteres,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Nome"" 2. Inserir o dado de teste                   3. Mudar o foco do campo",2-15 caracteres,2026-02-15,Paula (5),"P (1)
+Pa (2)
+Pau (3)
+PaulaPaulaPaul (14)
+PaulaPaulaPaula (15)
+PaulaPaulaPaulaP (16)",O usuário pode inserir nomes próprios aceitos de acordo com os limites e a partição válida.,O usuário pode inserir nomes próprios aceitos de acordo com os limites e a partição válida.,APROVADO,APROVADO,
+2,Verifique se o campo nome não pode ter menos de 2 caracteres ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Nome"" 2. Inserir o dado de teste                   3. Mudar o foco do campo",< 2 caracteres,"0, 1   ",,"Entrada vazia (0)
+P (1) 
+Pa (2)","O usuário não pode inserir menos de 2 caracteres. O campo fica destacado em vermelho e exibe a mensagem ""Insira um nome válido"".","O usuário não pode inserir menos de 2 caracteres. O campo fica destacado em vermelho e exibe a mensagem ""Insira um nome válido"".",APROVADO,APROVADO,
+3,Verifique se o campo nome não pode ter mais de 15 caracteres,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Nome"" 2. Inserir o dado de teste                   3. Mudar o foco do campo",> 15 caracteres,16,PaulaPaulaPaulaPaula (20),"PaulaPaulaPaula (15)
+PaulaPaulaPaulaP (16)
+PaulaPaulaPaulaPa (17)","O usuário não pode inserir mais de 15 caracteres. O campo fica destacado em vermelho e exibe ""Insira um nome válido"".","O usuário não pode inserir mais de 15 caracteres. O campo fica destacado em vermelho e exibe ""Insira um nome válido"".",APROVADO,APROVADO,
+4,Verificar se o campo nome pode conter letras latinas,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir nomes com caracteres latinos no campo ""Nome""
+
+2. Mudar o foco do campo   ",Letras latinas,,Paula,,O usuário pode inserir nomes próprios com caracteres latinos sem mensagem de erro.   ,O usuário pode inserir nomes próprios com caracteres latinos sem mensagem de erro.   ,APROVADO,APROVADO,
+5,Verifique se o campo nome pode conter letras cirílicas ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir nomes com caracteres cirílicos no campo ""Nome""
+
+2. Mudar o foco do campo   ",Letras cirílicas,,Джон   ,,O usuário pode inserir nomes próprios com caracteres cirílicos.    ,O campo exibe erro 'Enter a valid name' e borda vermelha ao inserir caracteres cirílicos.,REPROVADO,REPROVADO,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-1
+6,Verifique se o campo nome pode ter espaços antes,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Digitar o nome com espaço no início no campo ""Nome"" 
+2. Mudar o foco do campo",Espaço antes,, Paula,,O usuário pode inserir nomes próprios com espaços antes.,O usuário pode inserir nomes próprios com espaços antes.,APROVADO,APROVADO,
+7,Verifique se o campo nome pode ter espaços após    ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir nome com espaço no final no campo ""Nome""
+
+2. Mudar o foco do campo   ",Espaço após  ,,Paula ,,O usuário pode inserir nomes próprios com espaços após. ,O usuário pode inserir nomes próprios com espaços após. ,APROVADO,APROVADO,
+8,Verificar se o campo nome pode ter espaços no meio    ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Digitar nome composto com espaço no meio no campo ""Nome""
+
+2. Mudar o foco do campo   ",Espaço no meio ,,Paula Paula,,O usuário pode inserir nomes próprios com espaços após. ,O usuário pode inserir nomes próprios com espaços no meio.,APROVADO,APROVADO,
+9,Verificar se o campo nome pode conter traços     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir nome com hífen no campo ""Nome""
+
+2. Mudar o foco do campo   ",Traços    ,,Paula-Paula,,O usuário pode inserir nomes próprios com traços.,O usuário pode inserir nomes próprios com traços.,APROVADO,APROVADO,
+10,Verificar se o campo nome pode conter símbolos       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir caracteres especiais no campo ""Nome""
+
+2. Mudar o foco do campo   ",Símbolos    ,,$@!,,"O sistema destaca o campo em vermelho e exibe o erro ""Insira um nome válido"" (não aceita símbolos).","O sistema destaca o campo em vermelho e exibe o erro ""Insira um nome válido"" (não aceita símbolos).",APROVADO,APROVADO,
+11,Verificar se o campo nome está preenchido        ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Preencher o campo com um nome válido
+
+2. Mudar o foco  ",Obrigatório (preenchido),,Paula,,O usuário pode preencher o primeiro nome e o valor é mantido sem erro.,O usuário pode preencher o primeiro nome e o valor é mantido sem erro.,APROVADO,APROVADO,
+12,Verifique se o campo nome é obrigatório (vazio)        ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Deixar o campo ""Nome"" vazio
+
+2. Preencher os demais campos válidos
+
+3. Clicar em ""Avançar""   ",Obrigatório (vazio)   ,,Entrada vazia,,O usuário não pode enviar o formulário com o primeiro nome vazio.,O usuário não pode enviar o formulário com o primeiro nome vazio.,APROVADO,APROVADO,
+Campo Sobrenome,,,,,,,,,,,,
+13,Verifique se o campo sobrenome pode ter de 2 a 15 caracteres      ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Sobrenome""
+
+2. Inserir dado de teste
+
+3. Mudar o foco",2-15 caracteres,2026-02-15,Bizarro (7),"Bi (2)
+Biz (3)
+Bizarro (7)
+BizarroBizarro (14)
+BizarroBizarroB (15)",O usuário pode inserir sobrenomes válidos dentro dos limites de 2 a 15 caracteres.,O usuário pode inserir sobrenomes válidos dentro dos limites de 2 a 15 caracteres.,APROVADO,APROVADO,
+14,Verifique se o campo sobrenome não pode ter menos de 2 caracteres     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir menos de 2 caracteres no campo ""Sobrenome"" 
+
+2. Mudar o foco",< 2 caracteres,"0,1",,"Entrada vazia (0)
+
+B (1)","O usuário não pode inserir menos de 2 caracteres. O campo fica em vermelho com ""Insira um nome válido"".   ","O usuário não pode inserir menos de 2 caracteres. O campo fica em vermelho com ""Insira um nome válido"".   ",APROVADO,APROVADO,
+15,Verifique se o campo sobrenome não pode ter mais de 15 caracteres        ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir mais de 15 caracteres no campo ""Sobrenome""
+
+2. Mudar o foco ",> 15 caracteres,16,BizarroBizarroBiz (17),"BizarroBizarroB (15)
+
+BizarroBizarroBi (16)
+
+BizarroBizarroBiz (17)","O usuário não pode inserir mais de 15 caracteres. O campo fica em vermelho com ""Insira um nome válido"".",O campo aceita mais de 15 caracteres (17 caracteres inseridos) sem exibir borda vermelha e sem a mensagem de erro esperada.,REPROVADO,REPROVADO,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-2
+16,Verifique se o campo sobrenome pode conter traços     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir sobrenome com traço 
+
+2. Mudar o foco",Traços,,Bizarro-Bizarro,,O usuário pode inserir sobrenome com traço sem mensagem de erro.   ,O usuário pode inserir sobrenome com traço sem mensagem de erro.   ,APROVADO,APROVADO,
+17,Verifique se o campo sobrenome pode conter espaços no meio       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir sobrenome composto com espaço
+
+2. Mudar o foco ",Espaço no meio ,,Bizar ro,,O usuário pode inserir sobrenome composto com espaços.     ,O usuário pode inserir sobrenome composto com espaços.      ,APROVADO,APROVADO,
+18,Verifique se o campo sobrenome pode conter símbolos     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir símbolos no campo ""Sobrenome""
+
+2. Mudar o foco ",Símbolos    ,,#$&*,,"O campo fica destacado em vermelho e exibe o erro ""Insira um nome válido"".     ","O campo fica destacado em vermelho e exibe o erro ""Insira um nome válido"".      ",APROVADO,APROVADO,
+19,Verifique se o campo sobrenome é obrigatório (vazio)       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Deixar o campo ""Sobrenome"" vazio
+
+2. Preencher os demais campos
+
+3. Clicar em ""Avançar""   ",Obrigatório (vazio)   ,,Entrada vazia,,O sistema não permite avançar de formulário com o sobrenome vazio.       ,O sistema não permite avançar de formulário com o sobrenome vazio.   ,APROVADO,APROVADO,
+Campo Endereço,,,,,,,,,,,,
+20,Verifique se o campo endereço pode ter de 5 a 50 caracteres      ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Endereço""
+
+2. Inserir o endereço válido
+
+3. Mudar o foco ",5-50 caracteres ,"5, 50","Rua das Flores, 123 (19)","Rua 1 (5)
+
+Rua 12 (6)
+
+Av Central, 49 caracteres longos teste de limite (49)
+
+Av Central, 50 caracteres longos teste de limitee (50)",O usuário pode inserir o endereço com sucesso sem mensagem de erro.        ,O usuário pode inserir o endereço com sucesso sem mensagem de erro.   ,APROVADO,APROVADO,
+21,Verifique se o campo endereço não pode ter menos de 5 caracteres        ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir menos de 5 caracteres no campo ""Endereço""
+
+2. Mudar o foco ",< 5 caracteres,"0, 4",,"Entrada vazia (0)
+
+R (1)
+
+Rua (3)
+
+Rua1 (4)","O usuário não pode inserir menos de 5 caracteres. O campo fica em vermelho com ""Digite um número válido"".","O usuário não pode inserir menos de 5 caracteres. O campo fica em vermelho com ""Digite um número válido"".",APROVADO,APROVADO,
+22,Verifique se o campo endereço não pode ter mais de 50 caracteres        ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir mais de 50 caracteres no campo ""Endereço""
+
+2. Mudar o foco   ",> 50 caracteres ,51,Rua Exemplo Com Mais De Cinquenta Caracteres Validos Para Teste (63),"Av Central, 50 caracteres longos teste de limiteee (50)
+
+Av Central, 51 caracteres longos teste de limiteeee (51)","O usuário não pode inserir mais de 50 caracteres. O campo fica em vermelho com ""Digite um número válido"". ","O usuário não pode inserir mais de 50 caracteres. O campo fica em vermelho com ""Digite um número válido"". ",APROVADO,APROVADO,
+23,Verifique se o campo endereço pode conter letras e números       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir letras e números no campo ""Endereço""
+
+2. Mudar o foco ",Alfanumérico,,"17th North Avenue, 46",,O usuário pode inserir endereço contendo letras e números.  ,O usuário pode inserir endereço contendo letras e números.  ,APROVADO,APROVADO,
+24,Verifique se o campo endereço remove espaços no início e no fim       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir endereço com espaços no início e no fim
+
+2. Mudar o foco do campo   ",Espaços antes e depois   ,," Rua Augusta, 10",,Os espaços antes e depois são excluídos automaticamente ao perder o foco.     ,Os espaços antes e depois são excluídos automaticamente ao perder o foco.    ,APROVADO,APROVADO,
+25,"Verifique se o campo endereço pode conter traços, pontos e vírgulas      ","Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir pontuações permitidas no campo ""Endereço""
+
+2. Mudar o foco  ",Pontuações permitidas      ,,"Av. Paulista, 1000 - Apto 12",,"O campo aceita traços, pontos e vírgulas sem mensagem de erro.   ","O campo aceita traços, pontos e vírgulas sem mensagem de erro.   ",APROVADO,APROVADO,
+26,Verifique se o campo endereço pode conter símbolos      ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Inserir caracteres não permitidos no campo ""Endereço""
+
+2. Mudar o foco",Símbolos inválidos         ,,Rua Teste @#$%,,"O campo fica destacado em vermelho e exibe ""Digite um número válido"".     ","O campo fica destacado em vermelho e exibe ""Digite um número válido"".   ",APROVADO,APROVADO,
+27,Verifique se o campo endereço é obrigatório (vazio)      ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Deixar o campo ""Endereço"" vazio
+
+2. Preencher os demais campos
+
+3. Clicar em ""Avançar""   ",Obrigatório (vazio)         ,,Entrada vazia,,O sistema não permite avançar com o campo endereço vazio. ,O sistema avança e não destaca o campo Endereço em vermelho nem exibe mensagem de erro ao submeter o campo vazio. ,REPROVADO,REPROVADO,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-3
+Campo Estação de Metro,,,,,,,,,,,,
+28,Verifique se o campo da estação de metrô está preenchido com uma opção válida da lista    ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Estação de metrô""
+
+2. Digitar parte do nome de uma estação da lista
+
+3. Selecionar uma opção na lista suspensa   ",Estação válida da lista      ,,7th Street/Metro Center ,,A estação selecionada é preenchida no campo com sucesso.   ,A estação selecionada é preenchida no campo com sucesso.   ,APROVADO,APROVADO,
+29,Verifique se o campo da estação de metrô é obrigatório (vazio)     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Deixar o campo ""Estação de metrô"" vazio 
+
+2. Preencher os demais campos válidos 
+
+3. Clicar em ""Avançar""",Obrigatório (vazio)   ,,Entrada vazia,,O formulário não avança para a próxima etapa.   ,O formulário não avança para a próxima etapa.    ,APROVADO,APROVADO,
+Campo Número de Telefone,,,,,,,,,,,,
+30,Verifique se o campo número de telefone pode ter de 10 a 12 caracteres  ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2. Inserir número com + de 10 a 12 caracteres
+
+3. Mudar o foco",10-12 caracteres com +   ,2026-10-12, +1234567890 (11)," +12345678 (9)
+
++123456789 (10)
+
++1234567890 (11)
+
++12345678901 (12)
+
++123456789012 (13)",O número é inserido com sucesso sem erro e sem destaque vermelho.      ,O número é inserido com sucesso sem erro e sem destaque vermelho.      ,APROVADO,APROVADO,
+31,Verifique se o campo número de telefone não pode ter menos de 10 caracteres    ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2. Inserir telefone com menos de 10 caracteres incluindo o +
+
+3. Mudar o foco ",< 10 caracteres  ,"0, 9",  ,"Entrada vazia (0)
+
++12345678 (9)   ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"".  ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"". ",APROVADO,APROVADO,
+32,Verifique se o campo número de telefone não pode ter mais de 12 caracteres     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2. Inserir telefone com mais de 12 caracteres incluindo o +
+
+3. Mudar o foco",> 12 caracteres   ,13,"
+
++123456789012345 (16)","
+
++12345678901 (12)   
+
++123456789012 (13)","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"".  ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"". ",APROVADO,APROVADO,
+33,Verifique se o campo número de telefone não pode perder o sinal de mais       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2. Inserir número válido apenas com dígitos numéricos sem o sinal +
+
+3. Mudar o foco ",Sem sinal de mais     ,,1234567890 (10),,"O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"".  ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"". ",APROVADO,APROVADO,
+34,Verifique se o campo número de telefone pode ter um sinal de mais não como o primeiro caractere     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2. Inserir o sinal de + no meio do numero
+
+3. Mudar o foco ",Sinal + em posição inválida      ,,123+4567890 (11),,"O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"".  ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"". ",APROVADO,APROVADO,
+35,Verifique se o campo número de telefone pode conter letras latinas       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2. Inserir letras no campo ""Telefone""
+
+3. Mudar o foco ",Letras latinas         ,,"
+
++12345ABCDE",,"O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"".  ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"". ",APROVADO,APROVADO,
+36,Verifique se o campo número de telefone pode conter outros símbolos ou traços     ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Clicar no campo ""Telefone""
+
+2.Inserir traços, parênteses ou símbolos no campo ""Telefone""
+
+3. Mudar o foco ",Símbolos não permitidos       ,,"
+
++111-111-111   ",,"O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"".  ","O campo fica destacado em vermelho e exibe a mensagem ""Digite um número válido"". ",APROVADO,APROVADO,
+37,Verifique se o campo número é obrigatório (vazio)       ,"Acessar a página inicial do Urban Scooter e clicar no botão ""Fazer pedido"" (o formulário ""Para quem é a scooter"" deve estar visível e aberto).","1. Deixar o campo ""Telefone"" vazio
+
+2. Preencher os demais campos
+
+3. Clicar em ""Avançar""   ",Obrigatório (vazio)          ,,Entrada vazia,,O sistema impede o envio do formulário com o telefone vazio.   ,O sistema impede o envio do formulário com o telefone vazio.   ,APROVADO,APROVADO,

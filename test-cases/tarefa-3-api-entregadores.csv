@@ -1,0 +1,93 @@
+ID,Caso de teste,Pré-condição,Etapas do teste,Dados de teste (corpo da solicitação),Resultado esperado,Resultado real,Status,Link de bug do Jira
+ Criação de Entregador: POST /api/v1/courier,,,,,,,,
+1,Criar entregador com sucesso enviando todos os dados válidos  ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST para o endpoint /api/v1/courier com corpo JSON válido   ,"POST /api/v1/courier
+
+{""login"": ""ninja"", ""password"": ""1234"", ""firstName"": ""sasuke""}","Status 201 Created, corpo {""ok"": true}. Entregador inserido na tabela ""Couriers"".   ","Status 201 Created, corpo {""ok"": true}. Entregador inserido na tabela ""Couriers"".   ",Aprovado,
+2,Impedir criação de entregador com login duplicado/já existente  ,"1. O servidor do Urban Scooter deve estar ativo e acessível.
+
+2. Entregador com login ""ninja"" previamente criado no banco   ","1. Enviar requisição POST com o mesmo login ""ninja""   ","POST /api/v1/courier
+
+{""login"": ""ninja"", ""password"": ""1234"", ""firstName"": ""sasuke""}   ","Status 409 Conflict, corpo informando conflito de login. Nenhuma alteração no BD.   ","Status 409 Conflict, corpo informando conflito de login. Nenhuma alteração no BD.   ",Aprovado,
+3,Criar entregador com login no limite mínimo válido (2 caracteres alfabéticos)     ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com login de 2 caracteres,"POST /api/v1/courier
+
+{""login"": ""ab"", ""password"": ""1234"", ""firstName"": ""sasuke""}","Status 201 Created, corpo {""ok"": true}.   ","Status 201 Created, corpo {""ok"": true}.   ",Aprovado,
+4,Criar entregador com login no limite máximo válido (10 caracteres alfabéticos)  ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com login de 10 caracteres,"POST /api/v1/courier
+
+{""login"": ""abcdefghij"", ""password"": ""1234"", ""firstName"": ""sasuke""}","Status 201 Created, corpo {""ok"": true}.   ","Status 201 Created, corpo {""ok"": true}.   ",Aprovado,
+5,"Retornar erro ao criar entregador sem enviar o campo obrigatório ""login""    ",1. O servidor do Urban Scooter deve estar ativo e acessível.,"1. Enviar requisição POST omitindo o campo ""login""   ","POST /api/v1/courier
+
+{""password"": ""1234"", ""firstName"": ""sasuke""}  ","Status 400 Bad Request, corpo {""message"": ""Não há dados suficientes para criar uma conta""}.  ","Status 400 Bad Request, corpo {""message"": ""Não há dados suficientes para criar uma conta""}.  ",Aprovado,
+6,"Retornar erro ao criar entregador com campo ""login"" vazio     ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com login vazio  ,"POST /api/v1/courier
+
+{""login"": """", ""password"": ""1234"", ""firstName"": ""sasuke""}",Status 400 Bad Request com mensagem de dados insuficientes.   ,Status 400 Bad Request com mensagem de dados insuficientes.   ,Aprovado,
+7,Retornar erro ao criar entregador com login de 1 caractere (abaixo do mínimo) ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com login de 1 letra,"POST /api/v1/courier
+
+{""login"": ""a"", ""password"": ""1234"", ""firstName"": ""sasuke""}",Status 400 Bad Request. Nenhum registro criado no BD.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-4
+8,Retornar erro ao criar entregador com login de 11 caracteres (acima do máximo)   ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com login de 11 letras,"POST /api/v1/courier
+
+{""login"": ""abcdefghijk"", ""password"": ""1234"", ""firstName"": ""sasuke""}",Status 400 Bad Request. Nenhum registro criado no BD.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-5
+9,"Retornar erro ao criar entregador com números no campo ""login""     ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com dígitos em login,"POST /api/v1/courier
+
+{""login"": ""ninja123"", ""password"": ""1234"", ""firstName"": ""sasuke""}",Status 400 Bad Request. Nenhuma alteração no BD.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-6
+10,"Retornar erro ao criar entregador com caracteres especiais no ""login""    ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com símbolos em login,"POST /api/v1/courier
+
+{""login"": ""ninja@!"", ""password"": ""1234"", ""firstName"": ""sasuke""}",Status 400 Bad Request. Nenhuma alteração no BD.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-12
+11,"Criar entregador com sucesso sem enviar o campo opcional ""firstName""    ",1. O servidor do Urban Scooter deve estar ativo e acessível.,"1. Enviar requisição POST sem o campo ""firstName""","POST /api/v1/courier
+
+{""login"": ""courier2"", ""password"": ""1234""}","Status 201 Created, corpo {""ok"": true}. Entregador registrado.   ","Status 201 Created, corpo {""ok"": true}.   ",Aprovado,
+12,"Criar entregador com ""firstName"" no limite mínimo válido (2 caracteres)   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com firstName de 2 caracteres,"/api/v1/courier
+
+{""login"": ""courier3"", ""password"": ""1234"", ""firstName"": ""Ed""}","Status 201 Created, corpo {""ok"": true}.   ","Status 201 Created, corpo {""ok"": true}.   ",Aprovado,
+13,"Criar entregador com ""firstName"" no limite máximo válido (10 caracteres)   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com firstName de 10 caracteres,"POST /api/v1/courier
+
+{""login"": ""courier4"", ""password"": ""1234"", ""firstName"": ""Paulabizar""}","Status 201 Created, corpo {""ok"": true}.   ","Status 201 Created, corpo {""ok"": true}.   ",Aprovado,
+14,"Retornar erro ao criar entregador com ""firstName"" de 1 caractere   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com firstName de 1 letra,"POST /api/v1/courier
+
+{""login"": ""courier5"", ""password"": ""1234"", ""firstName"": ""P""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-7
+15,"Retornar erro ao criar entregador com ""firstName"" de 11 caracteres  ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com firstName de 11 letras,"POST /api/v1/courier
+
+{""login"": ""courier6"", ""password"": ""1234"", ""firstName"": ""Paulabizarr""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-8
+16,"Retornar erro ao criar entregador com números no campo ""firstName""",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com números no nome,"POST /api/v1/courier
+
+{""login"": ""courier7"", ""password"": ""1234"", ""firstName"": ""Paula12""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-9
+17,"Retornar erro ao criar entregador com símbolos no campo ""firstName""   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com símbolos no nome,"POST /api/v1/courier
+
+{""login"": ""courier8"", ""password"": ""1234"", ""firstName"": ""Paula@#""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-10
+18,Criar entregador com sucesso com senha de exatamente 4 números inteiros   ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com senha de 4 dígitos,"POST /api/v1/courier
+
+{""login"": ""courier9"", ""password"": ""5678"", ""firstName"": ""sasuke""}","Status 201 Created, corpo {""ok"": true}.   ","Status 201 Created, corpo {""ok"": true}.   ",Aprovado,
+19,"Retornar erro ao criar entregador sem enviar o campo obrigatório ""password""   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,"1. Enviar requisição POST omitindo o campo ""password""  ","POST /api/v1/courier
+
+{""login"": ""courier10"", ""firstName"": ""sasuke""}   ","Status 400 Bad Request, corpo {""message"": ""Não há dados suficientes para criar uma conta""}.   ","Status 400 Bad Request, corpo {""message"": ""Não há dados suficientes para criar uma conta""}.   ",Aprovado,
+20,"Retornar erro ao criar entregador com campo ""password"" vazio   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com senha vazia,"POST /api/v1/courier
+
+{""login"": ""courier11"", ""password"": """", ""firstName"": ""sasuke""}",Status 400 Bad Request com mensagem de dados insuficientes.   ,Status 400 Bad Request com mensagem de dados insuficientes.   ,Aprovado,
+21,Retornar erro ao criar entregador com senha de 3 dígitos (abaixo do tamanho fixo)   ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com senha de 3 números,"POST /api/v1/courier
+
+{""login"": ""courier12"", ""password"": ""123"", ""firstName"": ""sasuke""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-11
+22,Retornar erro ao criar entregador com senha de 5 dígitos (acima do tamanho fixo) ,1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com senha de 5 números,"POST /api/v1/courier
+
+{""login"": ""courier13"", ""password"": ""12345"", ""firstName"": ""sasuke""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-13
+23,"Retornar erro ao criar entregador com letras no campo ""password""   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com letras na senha,"POST /api/v1/courier
+
+{""login"": ""courier14"", ""password"": ""abcd"", ""firstName"": ""sasuke""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-14
+24,"Retornar erro ao criar entregador com caracteres especiais no ""password""   ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com símbolos na senha,"POST /api/v1/courier
+
+{""login"": ""courier15"", ""password"": ""12@#"", ""firstName"": ""sasuke""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-15
+25,"Retornar erro ao criar entregador com número fracionado/decimal no ""password"" ",1. O servidor do Urban Scooter deve estar ativo e acessível.,1. Enviar requisição POST com valor float,"POST /api/v1/courier
+
+{""login"": ""courier16"", ""password"": ""12.3"", ""firstName"": ""sasuke""}",Status 400 Bad Request.,"Status 201 Created, corpo {""ok"": true}.   ",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-16
+Exclusão de Entregador: DELETE /api/v1/courier/:id,,,,,,,,
+26,Excluir entregador com sucesso informando id válido existente,"1. O servidor do Urban Scooter deve estar ativo e acessível.
+
+2. Entregador previamente cadastrado com id = 1",1. Enviar requisição DELETE para /api/v1/courier/1,DELETE /api/v1/courier/1,"Status 200 OK, corpo {""ok"": true}. Registro removido da tabela ""Couriers"".   ","Status 200 OK, corpo {""ok"": true}. Registro removido da tabela ""Couriers"".   ",Aprovado,
+27,Retornar erro ao tentar excluir entregador já removido anteriormente,"1. O servidor do Urban Scooter deve estar ativo e acessível.
+
+2. O entregador com id = 1 foi excluído no teste 26",1. Enviar requisição DELETE novamente para /api/v1/courier/1,DELETE /api/v1/courier/1,"Status 404 Not Found (ou mensagem ""Esse entregador não existe""). Nenhuma alteração no BD.  ","Status 404 Not Found (ou mensagem ""Esse entregador não existe""). Nenhuma alteração no BD.  ",Aprovado,
+28,Retornar erro ao tentar excluir entregador com id inexistente,"1. O servidor do Urban Scooter deve estar ativo e acessível.
+
+2. Não haver registro no banco com id = 99999",1. Enviar requisição DELETE para /api/v1/courier/99999,DELETE /api/v1/courier/99999,"Status 404 Not Found (ou mensagem ""Esse entregador não existe"").  ","Status 404 Not Found (ou mensagem ""Esse entregador não existe"").  ",Aprovado,
+29,Retornar erro ao enviar requisição de exclusão sem fornecer o id,"1. O servidor do Urban Scooter deve estar ativo e acessível.
+",1. Enviar requisição DELETE para /api/v1/courier/ (sem id),DELETE /api/v1/courier/,"Status 400 Bad Request com corpo {""message"": ""Não há dados suficientes para remover o entregador""} (ou 404 Not Found de rota).    ","Status 500     ""message"": ""invalid input syntax for integer: \"" \""""",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-17
+30,Retornar erro ao tentar excluir entregador com id preenchido por espaço vazio,"1. O servidor do Urban Scooter deve estar ativo e acessível.
+",1. Enviar requisição DELETE para /api/v1/courier/%20,DELETE /api/v1/courier/%20,Status 400 Bad Request ou 404 Not Found.   ,"Status 500     ""message"": ""invalid input syntax for integer: \"" \""""",Reprovado,https://paulabizarro.atlassian.net/browse/PBQ3S9PF-18
