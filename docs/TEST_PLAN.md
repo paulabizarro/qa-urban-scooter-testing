@@ -7,7 +7,7 @@ Validar a qualidade funcional, regras de validação de entrada, comportamento c
 
 ## 2. Escopo de Testes
 
-### 2.1 Tarefa 1: Aplicativo Web (`/order` — Formulário *"Para quem é a scooter"*)
+### 2.1 Aplicativo Web (`/order` — Formulário *"Para quem é a scooter"*)
 * **Campos avaliados:**
   * **Nome:** Obrigatório | 2 a 15 caracteres | Somente letras, espaços e traços.
   * **Sobrenome:** Obrigatório | 2 a 15 caracteres | Somente letras, espaços e traços.
@@ -15,7 +15,7 @@ Validar a qualidade funcional, regras de validação de entrada, comportamento c
   * **Estação de metrô:** Obrigatório | Lista suspensa carregada via API (estações de Los Angeles).
   * **Telefone:** Obrigatório | 10 a 12 caracteres | Somente números e sinal de `+` obrigatório na primeira posição.
 
-### 2.2 Tarefa 3: Backend & REST API (`/api/v1/courier`)
+### 2.2 Backend & REST API (`/api/v1/courier`)
 * **`POST /api/v1/courier` (Criar entregador):**
   * `login`: Obrigatório | 2 a 10 caracteres | Somente letras latinas | Único no banco.
   * `password`: Obrigatório | Exatamente 4 caracteres | Somente números inteiros.
