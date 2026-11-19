@@ -1,4 +1,4 @@
-# 🛴 Urban Scooter — Projeto Final de Engenharia de Garantia da Qualidade (QA)
+# 🛴 Urban Scooter — Engenharia de Garantia da Qualidade (QA)
 
 ![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen?style=for-the-badge)
 ![Testes Executados](https://img.shields.io/badge/Casos%20de%20Teste-67-blue?style=for-the-badge)
